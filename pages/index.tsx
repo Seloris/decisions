@@ -1,4 +1,6 @@
 import type { NextPage } from 'next'
+import { title } from 'process'
+import Card from './components/card'
 
 interface DecisionMethod {
   type: 'random' | 'weightedCriteria'
@@ -24,15 +26,11 @@ const Home: NextPage = () => {
   return (
     <div>
       <h1 className="text-6xl font-bold">Decisions</h1>
-      <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
+      <div className="mt-6 flex max-w-4xl flex-col  items-center justify-around sm:w-full">
         {methods.map((m) => (
-          <a
-            href={m.type}
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:cursor-pointer hover:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">{m.title}</h3>
+          <Card className="m-2 flex-1" href={m.type} title={m.title}>
             <p className="mt-4 text-xl">{m.description}</p>
-          </a>
+          </Card>
         ))}
       </div>
     </div>

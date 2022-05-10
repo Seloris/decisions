@@ -1,3 +1,4 @@
+import { NextUIProvider } from '@nextui-org/react'
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
 import Layout from './components/layout'
